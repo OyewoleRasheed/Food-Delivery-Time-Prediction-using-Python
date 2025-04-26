@@ -1,67 +1,51 @@
-# 🚚 Food Delivery Time Prediction with LSTM
+# Food Delivery Time Prediction
 
-This project employs a Long Short-Term Memory (LSTM) neural network to predict food delivery times based on historical data. By analyzing factors such as delivery partner age, ratings, and the distance between the restaurant and the delivery location, the model aims to provide accurate delivery time estimates.
+This project focuses on predicting food delivery times using machine learning techniques in Python. It replicates and builds upon the work described [here](https://thecleverprogrammer.com/2023/01/02/food-delivery-time-prediction-using-python/).
 
-## 📌 Objective
+## Project Overview
 
-Develop a predictive model using LSTM to estimate the time taken for food deliveries, enhancing transparency and efficiency for food delivery services.
+Food delivery companies like Zomato and Swiggy aim to estimate delivery times accurately to enhance customer satisfaction. This project uses real-world delivery data to train a machine learning model that predicts delivery times based on:
 
-## 📂 Dataset Overview
+- Distance between restaurant and delivery location
+- Delivery person's age and ratings
+- Type of order and type of vehicle used
 
-The dataset includes:
+## Dataset
 
-- **Delivery Partner Details**: ID, age, and ratings.
-- **Location Data**: Latitude and longitude of restaurants and delivery locations.
-- **Order Information**: Type of order and vehicle used.
-- **Delivery Time**: Actual time taken for deliveries.
+The dataset includes features such as:
+- Delivery person ID, age, and ratings
+- Restaurant and delivery location coordinates
+- Type of order and vehicle
+- Time taken (target variable)
 
-📎 [Dataset Source & Blog](https://thecleverprogrammer.com/2023/01/02/food-delivery-time-prediction-using-python/)
+## Key Steps
 
-## 🧠 Approach
+1. **Data Cleaning**: Verified no missing values.
+2. **Feature Engineering**: Calculated distance between restaurant and customer using the haversine formula.
+3. **Data Visualization**: Explored feature relationships using visualizations.
+4. **Model Training**: Built and trained a machine learning model to predict delivery times.
+5. **Evaluation**: Evaluated the model’s performance using standard metrics.
 
-1. **Data Preprocessing**:
-   - Load and inspect the dataset.
-   - Check for null values and data types.
+## Libraries Used
 
-2. **Feature Engineering**:
-   - Calculate the distance between restaurant and delivery location.
-   - Select relevant features: delivery partner age, ratings, and distance.
+- `pandas`
+- `numpy`
+- `plotly`
+- `scikit-learn`
 
-3. **Model Building**:
-   - Reshape input data to fit LSTM requirements.
-   - Construct an LSTM model with two layers and dense output layers.
-   - Compile the model using the Adam optimizer and mean squared error loss function.
+## How to Run
 
-4. **Model Training**:
-   - Train the model over multiple epochs with a batch size of 1.
+1. Clone the repository.
+2. Install the required libraries:
+   ```bash
+   pip install pandas numpy plotly scikit-learn
+   ```
+3. Run the Python script or Jupyter Notebook.
 
-5. **Prediction**:
-   - Input new data to predict delivery time.
+## Results
 
-## 🧰 Technologies Used
+The model was able to predict delivery times with good accuracy, demonstrating the importance of distance and vehicle type among other factors.
 
-- Python
-- Pandas & NumPy
-- Keras (with TensorFlow backend)
-- Plotly Express (for visualization)
+## Acknowledgments
 
-## 📊 Results
-
-The LSTM model is trained to predict delivery times based on input features. Sample prediction:
-
-```python
-Age of Delivery Partner: 29
-Ratings of Previous Deliveries: 2.9
-Total Distance: 6
-Predicted Delivery Time in Minutes =  [[41.34929]]
-```
-
-## 🔮 Future Enhancements
-
-- Incorporate additional features like weather and traffic conditions.
-- Optimize the model architecture for better performance.
-- Deploy the model as a REST API for integration with real-time systems.
-
-## 🙏 Acknowledgments
-
-Thanks to [The Clever Programmer](https://thecleverprogrammer.com/2023/01/02/food-delivery-time-prediction-using-python/) for providing the dataset and inspiration for this project.
+- [The Clever Programmer](https://thecleverprogrammer.com/) for the original tutorial and dataset source.
